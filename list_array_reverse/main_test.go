@@ -1,4 +1,4 @@
-package list_array_reverse_recursive_test
+package list_array_reverse_test
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/dnguyen0304/data-structures-and-algorithms/common"
-	"github.com/dnguyen0304/data-structures-and-algorithms/list_array_reverse_recursive"
+	"github.com/dnguyen0304/data-structures-and-algorithms/list_array_reverse"
 )
 
 func TestReverseTimeComplexity(t *testing.T) {
@@ -14,7 +14,7 @@ func TestReverseTimeComplexity(t *testing.T) {
 	for _, length := range []int{10, 100, 1000, 1000000} {
 		list := common.NewRandomRange(length)
 		start := time.Now()
-		list_array_reverse_recursive.Reverse(list)
+		list_array_reverse.Recursive(list)
 		elapsed := time.Since(start).Seconds()
 		// Width assigns a fixed width whereas precision determines at least
 		// how many digits are displayed after the decimal point. The latter
