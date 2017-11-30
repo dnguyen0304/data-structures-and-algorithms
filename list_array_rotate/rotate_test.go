@@ -1,4 +1,4 @@
-package list_array_rotate_reversing_test
+package list_array_rotate_test
 
 import (
 	"fmt"
@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/dnguyen0304/data-structures-and-algorithms/common"
-	"github.com/dnguyen0304/data-structures-and-algorithms/list_array_rotate_reversing"
+	"github.com/dnguyen0304/data-structures-and-algorithms/list_array_rotate"
 )
 
-func TestLeftRotateTimeComplexity(t *testing.T) {
+func TestLeftByReversingTimeComplexity(t *testing.T) {
 	seconds := time.Now().UTC().Unix()
 	// This is global state. However, the standard library does provide APIs
 	// for creating local sources and random number generators.
@@ -21,7 +21,7 @@ func TestLeftRotateTimeComplexity(t *testing.T) {
 		list := common.NewRange(length)
 		factor := rand.Intn(length)
 		start := time.Now()
-		list_array_rotate_reversing.LeftRotate(list, factor)
+		list_array_rotate.LeftByReversing(list, factor)
 		elapsed := time.Since(start).Seconds()
 		// Width assigns a fixed width whereas precision determines at least
 		// how many digits are displayed after the decimal point. The latter
