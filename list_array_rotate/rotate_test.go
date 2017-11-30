@@ -32,3 +32,20 @@ func TestLeftByReversingTimeComplexity(t *testing.T) {
 			elapsed)
 	}
 }
+
+func TestLeftByTemporaryArrayTimeComplexity(t *testing.T) {
+	seconds := time.Now().UTC().Unix()
+	rand.Seed(seconds)
+
+	for _, n := range []int{10, 1000, 1000000, 10000000} {
+		list := common.NewRange(n)
+		factor := rand.Intn(n)
+		start := time.Now()
+		list_array_rotate.LeftByTemporaryArray(list, factor)
+		elapsed := time.Since(start).Seconds()
+		fmt.Printf(
+			"When n is equal to %8d, the operation takes %.9f seconds.\n",
+			n,
+			elapsed)
+	}
+}
