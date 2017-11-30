@@ -14,7 +14,11 @@
 // # Does the entire array fit into memory?
 package list_array_rotate
 
-import "github.com/dnguyen0304/data-structures-and-algorithms/list_array_reverse"
+import (
+	"errors"
+
+	"github.com/dnguyen0304/data-structures-and-algorithms/list_array_reverse"
+)
 
 // LeftByReversing left rotates an integer slice by the given factor.
 //
@@ -38,16 +42,20 @@ func RightByReversing(list []int, factor int) {
 //
 // The operation is applied in-place. The time complexity is O(n), where n is
 // the number of elements in the slice.
-func LeftByTemporaryArray(list []int, factor int) {
-	// Base Case
-	if list == nil {
-		return
+func LeftByTemporaryArray(list []int, factor int) error {
+	// Base Case: null or zero-valued list
+	if list == nil || len(list) == 0 {
+		return nil
 	}
-	// Base Case
-	// Only pointer-types (i.e. pointers, slices, channels, interfaces, maps,
-	// and functions) may be compared to nil.
+	// Base Case: zero-valued factor
+	// Only pointer-types such as pointers, slices, channels, interfaces,
+	// maps, and functions may be compared to nil.
 	if factor == 0 {
-		return
+		return nil
+	}
+	// Base Case: invalid factor
+	if factor < 0 {
+		return errors.New("The factor value is invalid.")
 	}
 	// Iterative Case
 	temporary := make([]int, factor)
@@ -58,6 +66,8 @@ func LeftByTemporaryArray(list []int, factor int) {
 	}
 
 	copy(list[len(list)-factor:], temporary)
+
+	return nil
 }
 
 // RightByTemporaryArray right rotates an integer slice by the given factor.
