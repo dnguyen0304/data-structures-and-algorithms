@@ -1,5 +1,5 @@
-// The list_array_reverse package implements reversal algorithms for array
-// data structures.
+// Package list_array_reverse implements reversal algorithms for array data
+// structures.
 //
 // # Should the array be reversed in-place?
 // # What type of data do the array's elements contain?

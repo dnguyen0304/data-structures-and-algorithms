@@ -1,4 +1,4 @@
-// package list_array_rotate implements rotation algorithms for array data
+// Package list_array_rotate implements rotation algorithms for array data
 // structures.
 //
 // Using a temporary array is approximately 100 times faster than reversing
