@@ -1,5 +1,10 @@
 package string
 
+// newPrefixArray creates a new array to track where substring suffixes are
+// the same as the prefixes.
+//
+// The time complexity is O(n), where n is the number of characters in the
+// string.
 func newPrefixArray(s string) []int {
 	prefixes := make([]int, len(s))
 
